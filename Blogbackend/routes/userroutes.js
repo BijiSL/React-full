@@ -5,7 +5,7 @@ router.use(express.json());
 
 router.post('/l',async(req,res)=>{
     try{
-    const user=UserData.findOne({email:req.body.email});
+    const user=await UserData.findOne({email:req.body.email});
 if(!user){
     res.send('user not found');
 }
